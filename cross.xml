@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests">
+<!--    <test verbose="2" preserve-order="true" name="firefoxTests">-->
+<!--        <classes>-->
+<!--            <class name="news.NewsPageTests">-->
+<!--                <parameter name="browser" value="firefox"/>-->
+<!--                <methods>-->
+<!--                    <include name="isNewsPage"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test verbose="2" preserve-order="true" name="chromeTests">
+        <classes>
+            <class name="news.NewsPageTests">
+                <parameter name="browser" value="firefox"/>
+                <methods>
+                    <include name="isNewsPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
