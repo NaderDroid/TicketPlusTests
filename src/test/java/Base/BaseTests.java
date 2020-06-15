@@ -2,8 +2,11 @@ package Base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.opera.OperaDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import pages.HomePage;
 
 public class BaseTests {
@@ -12,9 +15,22 @@ public class BaseTests {
     private WebDriver driver;
 
     @BeforeMethod
-    public void setUp() {
-        System.setProperty("webdriver.chrome.driver", currentUsersHomeDir + "/selenium_drivers/chromedriver");
-        driver = new ChromeDriver();
+    @Parameters("browser")
+    public void setUp(String browser) {
+
+        if (browser.equalsIgnoreCase("chrome")){
+            System.setProperty("webdriver.chrome.driver", currentUsersHomeDir + "/selenium_drivers/chromedriver");
+            driver = new ChromeDriver();
+        }
+        else if (browser.equalsIgnoreCase("firefox")){
+            System.setProperty("webdriver.gecko.driver", currentUsersHomeDir + "/selenium_drivers/geckodriver");
+            driver = new FirefoxDriver();
+        }
+        else {
+            System.setProperty("webdriver.Opera.driver", currentUsersHomeDir + "/selenium_drivers/operadriver");
+            driver = new OperaDriver();
+        }
+
         driver.get("http://localhost:8080");
         homePage = new HomePage(driver);
     }
