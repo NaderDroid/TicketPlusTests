@@ -12,6 +12,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import pages.HomePage;
 
+import static com.codeborne.selenide.Selenide.open;
+
 
 public class BaseTests {
     protected HomePage homePage;
@@ -23,19 +25,20 @@ public class BaseTests {
     public void setUp(String browser) {
 
         if (browser.equalsIgnoreCase("chrome")){
-            System.setProperty("webdriver.chrome.driver", currentUsersHomeDir + "/selenium_drivers/chromedriver");
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         }
         else if (browser.equalsIgnoreCase("firefox")){
-            System.setProperty("webdriver.gecko.driver", currentUsersHomeDir + "/selenium_drivers/geckodriver");
+            WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         }
-        else {
-            System.setProperty("webdriver.Opera.driver", currentUsersHomeDir + "/selenium_drivers/operadriver");
+        else if (browser.equalsIgnoreCase("opera")){
+            WebDriverManager.operadriver().setup();
             driver = new OperaDriver();
         }
 
-        driver.get("http://localhost:8080");
+        WebDriverRunner.setWebDriver(driver);
+        open("http://localhost:8080");
         homePage = new HomePage(driver);
     }
 
