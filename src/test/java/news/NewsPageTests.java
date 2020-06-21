@@ -15,4 +15,10 @@ public class NewsPageTests extends BaseTests {
         Assert.assertTrue(val , "Text not 'Add News' found");
     }
 
+    @Test
+    public void addNewNews(){
+        NewsPage newsPage = homePage.gotoNewsPage();
+        newsPage.addNews("Nader" , "Hello world");
+    }
+
 }

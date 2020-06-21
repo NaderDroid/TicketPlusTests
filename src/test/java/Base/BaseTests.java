@@ -7,9 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 import pages.HomePage;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -17,10 +15,9 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class BaseTests {
     protected HomePage homePage;
-    String currentUsersHomeDir = System.getProperty("user.home");
     private WebDriver driver;
 
-    @BeforeMethod
+    @BeforeClass
     @Parameters("browser")
     public void setUp(String browser) {
 
@@ -36,13 +33,18 @@ public class BaseTests {
             WebDriverManager.operadriver().setup();
             driver = new OperaDriver();
         }
+        else {
+            WebDriverManager.operadriver().setup();
+            driver = new OperaDriver();
+        }
 
         WebDriverRunner.setWebDriver(driver);
         open("http://localhost:8080");
         homePage = new HomePage(driver);
     }
 
-    @AfterMethod
+
+    @AfterClass
     public void cleanUp() {
         driver.quit();
     }

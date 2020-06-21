@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/Users/naderalthubaity/Projects/TicketPlusTests">
+        <classes>
+            <class name="cart.CartPageTests">
+                <parameter name="browser" value="opera"/>
+                <methods>
+                    <include name="testAddToCart"/>
+                    <include name="testEditCartQuantity"/>
+                </methods>
+            </class>
+            <class name="news.NewsPageTests">
+                <parameter name="browser" value="opera"/>
+                <methods>
+                    <include name="isNewsPage"/>
+                    <include name="addNewNews"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

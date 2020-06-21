@@ -7,6 +7,7 @@
                 <parameter name="browser" value="firefox"/>
                 <methods>
                     <include name="isNewsPage"/>
+                    <include name="addNewNews"/>
                 </methods>
             </class>
         </classes>
@@ -18,6 +19,8 @@
                 <parameter name="browser" value="chrome"/>
                 <methods>
                     <include name="isNewsPage"/>
+                    <include name="addNewNews"/>
+
                 </methods>
             </class>
         </classes>
@@ -29,6 +32,7 @@
                 <parameter name="browser" value="opera"/>
                 <methods>
                     <include name="isNewsPage"/>
+                    <include name="addNewNews"/>
                 </methods>
             </class>
         </classes>
