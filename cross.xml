@@ -3,11 +3,25 @@
 <suite name="All Test Suite" parallel="tests">
     <test verbose="2" name="FirefoxTests">
         <classes>
+            <class name="cart.CartPageTests">
+                <parameter name="browser" value="firefox"/>
+                <methods>
+                    <include name="testAddToCart"/>
+                    <include name="testEditCartQuantity"/>
+                    <include name="testDeleteFromCart"/>
+                    <include name="testEditWithInvalidInput"/>
+                    <include name="testValidCoupon"/>
+                    <include name="testInvalidCoupon"/>
+                    <include name="testDeleteValidCoupon"/>
+                </methods>
+            </class>
             <class name="news.NewsPageTests">
                 <parameter name="browser" value="firefox"/>
                 <methods>
                     <include name="isNewsPage"/>
                     <include name="addNewNews"/>
+                    <include name="addNewsWithoutHeading"/>
+                    <include name="addNewsWithoutBody"/>
                 </methods>
             </class>
         </classes>
@@ -15,12 +29,25 @@
 
     <test verbose="2" name="ChromeTests">
         <classes>
+            <class name="cart.CartPageTests">
+                <parameter name="browser" value="chrome"/>
+                <methods>
+                    <include name="testAddToCart"/>
+                    <include name="testEditCartQuantity"/>
+                    <include name="testDeleteFromCart"/>
+                    <include name="testEditWithInvalidInput"/>
+                    <include name="testValidCoupon"/>
+                    <include name="testInvalidCoupon"/>
+                    <include name="testDeleteValidCoupon"/>
+                </methods>
+            </class>
             <class name="news.NewsPageTests">
                 <parameter name="browser" value="chrome"/>
                 <methods>
                     <include name="isNewsPage"/>
                     <include name="addNewNews"/>
-
+                    <include name="addNewsWithoutHeading"/>
+                    <include name="addNewsWithoutBody"/>
                 </methods>
             </class>
         </classes>
@@ -28,11 +55,25 @@
 
     <test verbose="2" name="OperaTests">
         <classes>
+            <class name="cart.CartPageTests">
+                <parameter name="browser" value="opera"/>
+                <methods>
+                    <include name="testAddToCart"/>
+                    <include name="testEditCartQuantity"/>
+                    <include name="testDeleteFromCart"/>
+                    <include name="testEditWithInvalidInput"/>
+                    <include name="testValidCoupon"/>
+                    <include name="testInvalidCoupon"/>
+                    <include name="testDeleteValidCoupon"/>
+                </methods>
+            </class>
             <class name="news.NewsPageTests">
                 <parameter name="browser" value="opera"/>
                 <methods>
                     <include name="isNewsPage"/>
                     <include name="addNewNews"/>
+                    <include name="addNewsWithoutHeading"/>
+                    <include name="addNewsWithoutBody"/>
                 </methods>
             </class>
         </classes>

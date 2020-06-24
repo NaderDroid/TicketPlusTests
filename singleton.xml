@@ -7,6 +7,11 @@
                 <methods>
                     <include name="testAddToCart"/>
                     <include name="testEditCartQuantity"/>
+                    <include name="testDeleteFromCart"/>
+                    <include name="testEditWithInvalidInput"/>
+                    <include name="testValidCoupon"/>
+                    <include name="testInvalidCoupon"/>
+                    <include name="testDeleteValidCoupon"/>
                 </methods>
             </class>
             <class name="news.NewsPageTests">
@@ -14,6 +19,8 @@
                 <methods>
                     <include name="isNewsPage"/>
                     <include name="addNewNews"/>
+                    <include name="addNewsWithoutHeading"/>
+                    <include name="addNewsWithoutBody"/>
                 </methods>
             </class>
         </classes>

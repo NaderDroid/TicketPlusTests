@@ -26,6 +26,23 @@ public class NewsPage {
         bodyElement.clear();
         titleElement.sendKeys(title);
         bodyElement.sendKeys(body);
+
+    }
+
+    public void addNewsWithoutHeading(String body){
+        WebElement titleElement = driver.findElement(titleField);
+        WebElement bodyElement = driver.findElement(bodyField);
+        titleElement.clear();
+        bodyElement.clear();
+        bodyElement.sendKeys(body);
+    }
+
+    public void addNewsWithoutBody(String title){
+        WebElement titleElement = driver.findElement(titleField);
+        WebElement bodyElement = driver.findElement(bodyField);
+        titleElement.clear();
+        bodyElement.clear();
+        titleElement.sendKeys(title);
     }
 
 }

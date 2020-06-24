@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="tests" name="ChromeTests(failed)">
+    <classes>
+      <class name="news.NewsPageTests">
+        <parameter name="browser" value="chrome"/>
+        <methods>
+          <include name="cleanUp"/>
+          <include name="setUp"/>
+          <include name="addNewsWithoutBody"/>
+          <include name="addNewsWithoutHeading"/>
+          <include name="setUpReport"/>
+        </methods>
+      </class> <!-- news.NewsPageTests -->
+      <class name="cart.CartPageTests">
+        <parameter name="browser" value="chrome"/>
+        <methods>
+          <include name="cleanUp"/>
+          <include name="setUp"/>
+          <include name="testDeleteFromCart"/>
+          <include name="setUpReport"/>
+        </methods>
+      </class> <!-- cart.CartPageTests -->
+    </classes>
+  </test> <!-- ChromeTests(failed) -->
+  <test thread-count="5" parallel="tests" name="OperaTests(failed)">
+    <classes>
+      <class name="news.NewsPageTests">
+        <parameter name="browser" value="opera"/>
+        <methods>
+          <include name="cleanUp"/>
+          <include name="setUp"/>
+          <include name="addNewsWithoutBody"/>
+          <include name="addNewsWithoutHeading"/>
+          <include name="setUpReport"/>
+        </methods>
+      </class> <!-- news.NewsPageTests -->
+    </classes>
+  </test> <!-- OperaTests(failed) -->
+  <test thread-count="5" parallel="tests" name="FirefoxTests(failed)">
+    <classes>
+      <class name="news.NewsPageTests">
+        <parameter name="browser" value="firefox"/>
+        <methods>
+          <include name="cleanUp"/>
+          <include name="setUp"/>
+          <include name="addNewsWithoutBody"/>
+          <include name="addNewsWithoutHeading"/>
+          <include name="setUpReport"/>
+        </methods>
+      </class> <!-- news.NewsPageTests -->
+    </classes>
+  </test> <!-- FirefoxTests(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->
